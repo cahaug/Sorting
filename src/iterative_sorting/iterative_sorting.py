@@ -1,4 +1,4 @@
-arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+# arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 
 # Selection Sort: (imagine you are holding n cards in your hand...)
 # 1. Select the smallest card and move it to the far left
@@ -18,11 +18,11 @@ def selection_sort( arr ):
         # (hint, can do in 3 loc) (STEP #2,3)
         for j in range(1, len(arr)):
             local_minimum = min(arr[j:])
+        # TO-DO: swap
             arr.remove(local_minimum)
             arr.insert(j, local_minimum)
             j+=1
 
-        # TO-DO: swap
 
     return arr
 
@@ -30,10 +30,11 @@ def selection_sort( arr ):
 
 
 # Bubble Sort: (imagine you are holding n cards in your hand...)
-# 1. Compare the first pair of elements 
+# 1. Compare a pair of elements 
 #       - If the right hand side is less than the left hand side, swap the values
 #       - Else, do nothing
-# 2. Iterate through the array, comparing other pairs of adjacent elements
+# 2. Iterate through the array, comparing other pairs of adjacent elements 
+#       (* the last pair of compared values will be the arrayLength-2 & arraylength-1 as we are using zero-based indexing)
 # 3. If one or more swaps was performed on a given pass, repeat the pass/process (reset swap boolean/counter here)
 
 # TO-DO:  implement the Bubble Sort function below
@@ -48,7 +49,7 @@ def bubble_sort( arr ):
                 arr.insert(j+1, comparative_maximum)
     return arr
 
-print(bubble_sort(arr1))
+# print(bubble_sort(arr1))
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
