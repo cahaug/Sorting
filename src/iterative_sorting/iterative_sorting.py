@@ -1,4 +1,4 @@
-# arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
 
 # Selection Sort: (imagine you are holding n cards in your hand...)
 # 1. Select the smallest card and move it to the far left
@@ -8,14 +8,15 @@
 def selection_sort( arr ):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
+        # cur_index = i
+        # smallest_index = cur_index
         # TO-DO: find next smallest element
-        # (STEP #1)
+        # 1. Select the smallest card and move it to the far left
         absolute_minimum = min(arr)
         arr.remove(absolute_minimum)
         arr.insert(0, absolute_minimum)
-        # (hint, can do in 3 loc) (STEP #2,3)
+        # 2. Select the next smallest card and move it to the left so that it is to the immediate right of the previous card, 3. Repeat
+        # (hint, can do in 3 loc) 
         for j in range(1, len(arr)):
             local_minimum = min(arr[j:])
         # TO-DO: swap
@@ -26,7 +27,7 @@ def selection_sort( arr ):
 
     return arr
 
-# print(selection_sort(arr1))
+print(selection_sort(arr1))
 
 
 # Bubble Sort: (imagine you are holding n cards in your hand...)
